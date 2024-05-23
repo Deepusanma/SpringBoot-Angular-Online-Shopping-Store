@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: built-war
-          path: target/*.war
+          path: backend/target/*.war
           
       - name: Download Maven artifacts
         uses: actions/download-artifact@v2
