@@ -34,13 +34,17 @@ jobs:
         run: mvn clean package
         working-directory: ./backend
 
+      - name: List files in target directory for debugging
+        run: ls -la ./backend/target
+
       - name: Upload WAR as artifact
         uses: actions/upload-artifact@v3
         with:
           name: built-war
           path: backend/target/*.war
-          
+          if-no-files-found: warn
+
       - name: Download Maven artifacts
         uses: actions/download-artifact@v2
         with:
-          name: maven-artifacts
+          name: built-war
