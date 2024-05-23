@@ -30,9 +30,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Configure Artifactory
-        run: mvn -B -s settings.xml
-
       - name: Build project
         run: mvn clean package
 
