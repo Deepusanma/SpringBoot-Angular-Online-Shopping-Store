@@ -30,9 +30,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Build project
-        run: mvn clean package
+      - name: Build project as WAR
+        run: mvn clean war:war -DskipTests
         working-directory: ./backend
+
 
       - name: List files in target directory for debugging
         run: ls -la ./backend/target
