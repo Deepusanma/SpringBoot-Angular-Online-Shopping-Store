@@ -32,6 +32,7 @@ jobs:
 
       - name: Build project
         run: mvn clean package
+        working-directory: ./backend
 
       - name: Upload WAR as artifact
         uses: actions/upload-artifact@v3
